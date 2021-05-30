@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--link to our stylesheet-->  
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li>
+          <a href="#bar">Top 10 Bacteria</a>
+        </li>
+        <li>
+          <a href="#gauge">Wash Frequency</a>
+        </li>
+        <li>
+          <a href="#scatter">Bacteria Cultures Per Sample</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-10">
+        In this scientific study, the team looked to discover and document bacterial species that have the ability to synthesize proteins that taste like beef. 
+        Our lab has partnered with Impossible Beef, a food startup to research candidate species, for this study. 
+
+      
+        The human body has thousands of different kinds of bacteria, and differennt body parts will house different species. <br><br> We hypothesize that the ideal bacteria to make synthetic beef, may be found in someones belly button.
+        
+        To properly test our hypothesis, we havve sampled thousands of particpiants navels to identify bacterial specis that colonize our belly buttons. Each study participant is anonymous and has been assigned an ID number.
+      
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div id="bar"></div>
+        <p> The bar chart above shoes the top 10 bacterial species (OTUs) that were found in the study participant's belly buttons.</p>
+      </div>
+      <div class="col-md-6">
+        <div id="gauge"></div>
+        <p>The gauge chart above shows the number of times each study participant washes their belly button each week.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+        <p>The bubble chart above shows a bubble for each bacteria species found. The size of the bubble corerelates to the amount of bacteria found in the sample from each study participant.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- <script src="plots.js"></script> -->
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
